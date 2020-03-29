@@ -11,9 +11,7 @@ export default function Blog({posts}) {
           return (
             <h2 key={post.id}>
               <Link href={`/blog/[slug]`} as={`/blog/${post.slug}`}>
-                <a>
-                  {post.title.rendered}
-                </a>
+                <a dangerouslySetInnerHTML={{ __html: post.title.rendered }}></a>
               </Link>
             </h2>
           )
